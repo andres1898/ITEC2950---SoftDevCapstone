@@ -34,10 +34,13 @@ question = input('Enter your question for the magic 8 ball: ')
 
 magic_8_ball_url = f'https://magic-8-ball-mctc.uc.r.appspot.com/magic/JSON/{question}'
 
-response = request.get(magic_8_ball_url).jason()
-answer = response['magic']['answer']
-print(f'The magic 8 ball says .... \n{answer}')
-
+try:
+  response = request.get(magic_8_ball_url).jason()
+  answer = response['magic']['answer']
+  print(f'The magic 8 ball says .... \n{answer}')
+except Exception as e:
+  print(e)
+  print('Sorry, the magic ball 8 is not available')
 
 
 
