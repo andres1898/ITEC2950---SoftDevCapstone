@@ -1,0 +1,52 @@
+### Set is a collection that do not allow duplicates
+cats = set() # recommended to create an empty set first
+cats.add('Lion')
+cats.add('Tiger')
+cats.add('Cheetah')
+print(cats) #Sets are not organized
+
+birds = {'owl', 'robin', 'swam'} #also a set
+birds.remove('owl')
+birds.add('robin')
+birds.add('cardinal')
+print(birds) #not organized, robin is not twice
+# you can loop in a set without problem
+for bird in birds:
+  print(bird)
+
+# by converting a list into a set, we delete duplicates
+bird_list = ['owl', 'robin', 'swam', 'owl', 'robin', 'swam']
+bird_list_no_duplicates = list(set(bird_list))
+print(bird_list_no_duplicates)
+
+### Exception with try & except
+#avoid the program to crash
+try:
+  print(no_exist_object)
+except:
+  print('oops, that does not exist')
+
+### API handle exceptions
+
+import requests
+
+question = input('Enter your question for the magic 8 ball: ')
+
+magic_8_ball_url = f'https://magic-8-ball-mctc.uc.r.appspot.com/magic/JSON/{question}'
+
+response = request.get(magic_8_ball_url).jason()
+answer = response['magic']['answer']
+print(f'The magic 8 ball says .... \n{answer}')
+
+
+
+
+
+
+
+
+
+
+
+
+
