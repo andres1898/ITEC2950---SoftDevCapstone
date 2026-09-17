@@ -8,8 +8,8 @@ try:
     lon = -93.26
     units = 'metric'  # change to 'imperial' for quantities in Fahrenheit, miles per hour etc.
 
-    api_key = "fcfd3c850029434b567d71fcf30afd8e"
-    #api_key = os.environ['WEATHER_KEY']  # Set this environment variable on your computer
+    
+    api_key = os.environ['WEATHER_KEY']  # Set this environment variable on your computer
 
     # use a dic for query parameter
     url = f'https://api.openweathermap.org/data/2.5/forecast'
