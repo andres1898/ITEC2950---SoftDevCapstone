@@ -13,13 +13,22 @@ class Video(models.Model):
     def save(self, *arg, **kwargs):
 
         # validation for a video from Youtube.com
-        if not self.url.startswith('https://www.youtube.com/watch'):
-            raise ValidationError('Video is not from Youtube.com')
+        #if not self.url.startswith('https://www.youtube.com/watch'):
+        #    raise ValidationError('Video is not from Youtube.com')
 
         # extract the video ID form the url
         url_components = parse.urlsplit(self.url)
-        query_string = url_components.query # this results in 'v=poj789da'
 
+        if url_components.scheme != 'https':
+            raise ValidationError('Video is not from Youtube.com')
+
+        if url_components.netloc != 'www.youtube.com':
+            raise ValidationError('Video is not from Youtube.com')
+
+        if url_components.path != '/watch':
+            raise ValidationError('Video is not from Youtube.com')
+
+        query_string = url_components.query # this results in 'v=poj789da'
         if not query_string:
             raise ValidationError(f'Invalid Youtube URL {self.url}')
         parameters = parse.parse_qs(query_string, strict_parsing=True) # this will create a dictionary
