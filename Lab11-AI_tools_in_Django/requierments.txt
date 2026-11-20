@@ -1,0 +1,18 @@
+# Core Web Framework
+Django==6.1
+
+# Production Server (for App Engine / Cloud Run deployments)
+gunicorn==23.0.0
+
+# Google Cloud Authentication & Core Tools
+google-auth==2.35.0
+google-api-python-client==2.150.0
+
+# Common Google Cloud Services (uncomment the ones you need)
+google-cloud-storage==3.0.0
+google-cloud-secret-manager==2.21.0
+# google-cloud-logging>=3.11.0
+# google-cloud-sql-connector>=1.12.0
+
+# Database Drivers
+mysqlclient==2.2.0
