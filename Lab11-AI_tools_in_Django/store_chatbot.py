@@ -6,7 +6,7 @@ from rich.markdown import Markdown
 client = genai.Client()
 chat = client.chats.create(model='gemini-3.5-flash-lite')
 
-while True:
+while True: # any time the user respond, keep the conversation
     question = input('Message for Louis ')
     response = chat.send_message(
         question,

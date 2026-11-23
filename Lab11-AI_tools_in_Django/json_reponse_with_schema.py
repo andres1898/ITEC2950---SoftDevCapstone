@@ -2,6 +2,7 @@ from google import genai
 from google.genai.types import GenerateContentConfig
 from pydantic import BaseModel
 
+# We can standardize a response using the BaseModel class, where you specify the field to be fill by the AI
 class Recipe(BaseModel):
     recipe_name: str
     ingredient: list[str]
